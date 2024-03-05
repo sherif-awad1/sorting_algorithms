@@ -1,6 +1,6 @@
 /*
-File: 0-bubble_sort.c
-Author: Sherif Awad
+ * File: 0-bubble_sort.c
+ * Author: Sherif Awad
 */
 #include "sort.h"
 
@@ -28,4 +28,3 @@ void bubble_sort(int *array, size_t size)
 			}
 		}
 }
-
