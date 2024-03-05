@@ -3,7 +3,6 @@
  * Author: Sherif Awad
 */
 #include "sort.h"
-
 /**
  * bubble_sort - sort array from low to high
  * @array: array
