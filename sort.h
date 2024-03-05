@@ -3,8 +3,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 /*
-File: sort.h
-Author: Sherif Awad
+ * File: sort.h
+ * Author: Sherif Awad
 */
 /**
  * struct listint_s - Doubly linked list node
