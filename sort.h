@@ -26,8 +26,9 @@ void bubble_sort(int *array, size_t size);
 int list_len(listint_t *list);
 void insertion_sort_list(listint_t **list);
 void selection_sort(int *array, size_t size);
-
-
+int Indexer(int *array, int prev, int next, size_t size);
+void QuichHelper(int *array, int prev, int next, size_t size);
+void quick_sort(int *array, size_t size);
 
 
 
