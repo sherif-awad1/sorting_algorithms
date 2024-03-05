@@ -29,6 +29,7 @@ void selection_sort(int *array, size_t size);
 int Indexer(int *array, int prev, int next, size_t size);
 void QuichHelper(int *array, int prev, int next, size_t size);
 void quick_sort(int *array, size_t size);
+void shell_sort(int *array, size_t size);
 
 
 
