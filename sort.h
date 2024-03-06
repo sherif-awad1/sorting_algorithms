@@ -44,7 +44,6 @@ void radix_sort(int *array, size_t size);
 void BitonicCompain(int *array, int l, int r, int direction);
 void BitonicHelprt(int *array, int l, int r, int direction, size_t size);
 void bitonic_sort(int *array, size_t size);
-
-
+void quick_sort_hoare(int *array, size_t size);
 
 #endif
