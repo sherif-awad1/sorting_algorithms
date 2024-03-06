@@ -33,6 +33,9 @@ void shell_sort(int *array, size_t size);
 void SwapNodes(listint_t **list, listint_t **node);
 void cocktail_sort_list(listint_t **list);
 void counting_sort(int *array, size_t size);
+void merge_sort(int *array, size_t size);
+void MargeHelper(int *TmpArray, int *array, size_t prev, size_t next);
+void ArrayAlice(int *TmpArry, int *arry, size_t prv, size_t cntr, size_t next);
 
 
 
