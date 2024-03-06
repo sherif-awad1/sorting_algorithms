@@ -3,7 +3,10 @@
  * Author: Sherif Awad
  */
 #include "sort.h"
-
+void merge_sort(int *array, size_t size);
+void merge_recursion(int *arr, int *array, size_t left, size_t right);
+void merge_subarray(int *arr, int *array, size_t left,
+		size_t middle, size_t right);
 /**
  * merge_sort - sort array with merge sorting algorithm
  * @array: array
@@ -23,59 +26,60 @@ void merge_sort(int *array, size_t size)
 }
 
 /**
- * MargeHelper - help merge sort array
- * @TmpArray: temper array
+ * merge_recursion - help merge sort array
+ * @arr: temper array
  * @array: array
- * @prev: index of prev element
- * @next: index of next element
+ * @left: index of prev element
+ * @right: index of next element
  */
-void MargeHelper(int *TmpArray, int *array, size_t prev, size_t next)
+void merge_recursion(int *arr, int *array, size_t left, size_t right)
 {
-	size_t center;
+	size_t middle;
 
-	if (next - prev > 1)
+	if (right - left > 1)
 	{
-		center = (next - prev) / 2 + prev;
-		MargeHelper(TmpArray, array, prev, center);
-		MargeHelper(TmpArray, array, center, next);
-		ArrayAlice(TmpArray, array, prev, center, next);
+		middle = (right - left) / 2 + left;
+		merge_recursion(arr, array, left, middle);
+		merge_recursion(arr, array, middle, right);
+		merge_subarray(arr, array, left, middle, right);
 	}
 }
 
 /**
- * ArrayAlice - array alice
- * @TmpArry: Temp array
- * @arry: array
- * @prv: index of prev element
- * @cntr: index of center element
- * @next: index of next elemen
+ * merge_subarray - array alice
+ * @arr: Temp array
+ * @array: array
+ * @left: index of prev element
+ * @middle: index of center element
+ * @right: index of next elemen
  */
-void ArrayAlice(int *TmpArry, int *arry, size_t prv, size_t cntr, size_t next)
+void merge_subarray(int *arr, int *array, size_t left,
+		size_t middle, size_t right)
 {
 	size_t i, j, k = 0;
 
 	printf("Merging...\n");
-	printf("[prv]: ");
-	print_array(arry + prv, cntr  - prv);
-	printf("[next]: ");
-	print_array(arry + cntr, next - cntr);
+	printf("[left]: ");
+	print_array(array + left, middle  - left);
+	printf("[right]: ");
+	print_array(array + middle, right - middle);
 
-	for (i = prv, j = cntr; i < cntr && j < next; k++)
+	for (i = left, j = middle; i < middle && j < right; k++)
 	{
-		if (arry[i] < arry[j])
-			TmpArry[k] = arry[i++];
+		if (array[i] < array[j])
+			arr[k] = array[i++];
 		else
-			TmpArry[k] = arry[j++];
+			arr[k] = array[j++];
 	}
 
-	while (i < cntr)
-		TmpArry[k++] = arry[i++];
-	while (j < next)
-		TmpArry[k++] = arry[j++];
+	while (i < middle)
+		arr[k++] = array[i++];
+	while (j < right)
+		arr[k++] = array[j++];
 
-	for (k = prv, i = 0; k < next; k++)
-		arry[k] = TmpArry[i++];
+	for (k = left, i = 0; k < right; k++)
+		array[k] = arr[i++];
 
 	printf("[Done]: ");
-	print_array(arry + prv, next - prv);
+	print_array(array + left, right - left);
 }

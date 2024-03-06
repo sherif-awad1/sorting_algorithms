@@ -34,8 +34,9 @@ void SwapNodes(listint_t **list, listint_t **node);
 void cocktail_sort_list(listint_t **list);
 void counting_sort(int *array, size_t size);
 void merge_sort(int *array, size_t size);
-void MargeHelper(int *TmpArray, int *array, size_t prev, size_t next);
-void ArrayAlice(int *TmpArry, int *arry, size_t prv, size_t cntr, size_t next);
+void merge_recursion(int *arr, int *array, size_t left, size_t right);
+void merge_subarray(int *arr, int *array, size_t left,
+		size_t middle, size_t right);
 
 
 
