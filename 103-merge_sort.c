@@ -11,15 +11,15 @@
  */
 void merge_sort(int *array, size_t size)
 {
-	int *TmpArray;
+	int *arr;
 
 	if (!array || size < 2)
 		return;
 
-	TmpArray = malloc(sizeof(int) * size);
+	arr = malloc(sizeof(int) * size);
 
-	MargeHelper(TmpArray, array, 0, size);
-	free(TmpArray);
+	merge_recursion(arr, array, 0, size);
+	free(arr);
 }
 
 /**
