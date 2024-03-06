@@ -37,7 +37,8 @@ void merge_sort(int *array, size_t size);
 void merge_recursion(int *arr, int *array, size_t left, size_t right);
 void merge_subarray(int *arr, int *array, size_t left,
 		size_t middle, size_t right);
-
+void HeapArray(int *array, size_t size2, size_t index, size_t size);
+void heap_sort(int *array, size_t size);
 
 
 
